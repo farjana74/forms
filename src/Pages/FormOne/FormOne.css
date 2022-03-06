@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@0;1&family=Poppins:wght@400;600&display=swap');
+
+.forms-container{
+    /* display: flex; */
+    
+    align-items: center;
+    /* justify-content: space-between; */
+}
+form input{
+    width:100%;
+    color:white;
+    background-color: #000000;
+    border-radius: 8px;
+    height: 56px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    border: none;
+    /* border:2px solid rgb(14, 14, 46); */
+    
+}
+#next{
+    background-color:#1565D8;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+}
