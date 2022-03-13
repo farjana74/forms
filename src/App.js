@@ -7,6 +7,7 @@ import FormSecond from './Pages/FormSecond/FormSecond';
 // import FormSecond from './Pages/FormSecond/FormSecond';
 import FormThird from './Pages/FormThird/FormThird';
 import Forms from './Pages/Forms';
+import MeetingMinutes from './Pages/MeetingMinutes/MeetingMinutes';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <div>
       {/* <RichText></RichText> */}
       <Forms></Forms>
+      {/* <MeetingMinutes></MeetingMinutes> */}
       {/* <FormThird></FormThird> */}
       {/* <FormOne></FormOne> */}
       {/* <FormSecond></FormSecond> */}

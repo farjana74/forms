@@ -6,11 +6,34 @@
     align-items: center;
     /* justify-content: space-between; */
 }
+.bg-color{
+    background-color: #111215;
+}
 .client-name{
      font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 14px;
+    background-color: #111215;
+}
+.editors-background{
+    background-color: white;
+     font-family: 'Poppins', sans-serif;
+  
+    
+    width:100%;
+   
+   
+    border-radius: 8px;
+    height: 56px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    border: none;
+}
+.editor-background{
+    background-color: white;
 }
 /* form input{
     width:100%;
@@ -33,7 +56,7 @@
     font-size: 14px;
 }
 .meeting-text{
-    color:white;
+    color:black;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
 }

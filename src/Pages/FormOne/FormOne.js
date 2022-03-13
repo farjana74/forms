@@ -2,17 +2,48 @@ import React from 'react';
 import "./FormOne.css"
 import { useForm } from 'react-hook-form';
 import forms from "../../images/DrawKit-daily-life-vector-illustration-01 1.png"
-const FormOne = ({ formData, setFormData }) => {
+import axios from 'axios';
+const FormOne = ({ formData, setFormData, content, setContent, contents, setContents, contentDiscussion, setContentDiscussion, contentParticipant, setContentParticipant }) => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        if (data) {
-            alert("added")
-            reset();
-        }
+
+        // post api intrigation---------------
+        // axios.post('https://digitalbackend.techsistltd.com/client_information/', data)
+        //     .then(res => {
+        //         if (res.data) {
+        //             alert('added succesfully')
+        //             reset();
+        //         }
+        //     })
+
+        // fetch('https://digitalbackend.techsistltd.com/client_information/', {
+        //     method: "POST",
+        //     headers: {
+        //         'content-type': 'application/json'
+
+        //     },
+        //     body: JSON.stringify(data)
+        // })
+        //     .then(res => res.json())
+        //     .then(result => {
+        //         if (result) {
+        //             alert('added successfully')
+        //             reset();
+        //         }
+        //     })
+
+
+
+
+
         console.log(data);
     }
+
+
+
+
     return (
-        <div className='container my-5'>
+        <div className='container bg-color mt-5'>
             <div className='row d-flex justify-content-center align-items-center '>
                 <div className='col-md-5'>
 
@@ -23,13 +54,13 @@ const FormOne = ({ formData, setFormData }) => {
                     <form onSubmit={handleSubmit(onSubmit)} className="">
 
 
-                        <input className='mb-4 ps-2' {...register("name", { required: true, maxLength: 20 })} placeholder="Client Name"
-                            value={formData.name}
+                        <input className='mb-4 ps-2 meetings-information' type="text"  {...register("clientName", { required: true, maxLength: 20 })} placeholder="Client Name"
+                            value={formData.clientName}
                             onChange={(e) => {
-                                setFormData({ ...formData, name: e.target.value })
+                                setFormData({ ...formData, clientName: e.target.value })
                             }} />
                         <br />
-                        <input className='mb-4 ps-2' placeholder="Company Name" {...register("companyName", { required: true, maxLength: 20 })}
+                        <input className='mb-4 ps-2 meetings-information' placeholder="Company Name" type="text"  {...register("companyName", { required: true, maxLength: 20 })}
 
                             value={formData.companyName}
                             onChange={(e) => {
@@ -38,14 +69,14 @@ const FormOne = ({ formData, setFormData }) => {
 
                         />
                         <br />
-                        <input className='mb-4 ps-2' type="number" {...register("number", { required: true, maxLength: 20 })} placeholder="Phone Number"
+                        <input className='mb-4 ps-2 meetings-information' type="number" {...register("number", { required: true, maxLength: 20 })} placeholder="Phone Number"
                             value={formData.number}
                             onChange={(e) => {
                                 setFormData({ ...formData, number: e.target.value })
                             }} />
                         <br />
 
-                        <input className='mb-4 ps-2' placeholder="Email" {...register("email", { required: true, maxLength: 20 })}
+                        <input className='mb-4 ps-2 meetings-information' placeholder="Email" type="email"  {...register("email", { required: true, maxLength: 20 })}
                             value={formData.email}
                             onChange={(e) => {
                                 setFormData({ ...formData, email: e.target.value })

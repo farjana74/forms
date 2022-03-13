@@ -5,18 +5,24 @@ import react, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRef } from 'react';
 import JoditEditor from "jodit-react";
-import { jsPDF } from "jspdf";
+
 
 // Default export is a4 paper, portrait, using millimeters for units
 
 
 
 import secondForms from "../../images/DrawKit-daily-life-vector-illustration-01 1.png"
-const FormSecond = ({ formData, setFormData }) => {
-    const doc = new jsPDF();
+const FormSecond = ({ formData, setFormData, content, setContent, contents, setContents, contentDiscussion, setContentDiscussion, contentParticipant, setContentParticipant }) => {
+
+
+
+
+
+
     const editor = useRef(null)
 
     // const [content, setContent] = useState('')
+    console.log(content)
     const { register, handleSubmit, reset } = useForm();
     const [title, SetTitle] = useState("");
     const [body, SetBody] = useState("");
@@ -33,60 +39,105 @@ const FormSecond = ({ formData, setFormData }) => {
     }
     return (
         <div>
-            <div className='container my-5'>
+            <div className='container mt-5 bg-color'>
                 <div className='row d-flex justify-content-center align-items-center '>
-                    <div className='col-md-8'>
+                    <div className='col-md-8 '>
 
                         <form onSubmit={handleSubmit(onSubmit)} className="">
 
-                            <h2 className='text-white mb-3 client-name'>Client Name:</h2>
-                            <h2 className='meeting-text'>Meeting Participants:</h2>
-                            <textarea placeholder='Meeting Participant' {...register("meetingParticipants", { maxLength: 20 })} className='w-100 text-area mb-4  p-2' name="" id="" cols="20" rows="5"
-                                value={formData.meetingParticipants}
+                            <h2 className='text-white mb-3 client-name'>Client Name :  {formData.clientName}</h2>
+                            <br />
+                            <h2 className='text-white mb-3 client-name'> Meeting Location</h2>
+                            <input className='mb-4 ps-2 editors-background'   {...register("meetingLocation", { required: true, maxLength: 20 })} placeholder="Location"
+                                value={formData.meetingLocation}
                                 onChange={(e) => {
-                                    setFormData({ ...formData, meetingParticipants: e.target.value })
-                                }}
+                                    setFormData({ ...formData, meetingLocation: e.target.value })
+                                }} />
+                            <h2 className='text-white mb-3 client-name'>Meeting Time</h2>
+                            <input className='mb-4 ps-2 editors-background' {...register("meetingTime", { required: true, maxLength: 20 })} placeholder="Meeting Time"
+                                value={formData.meetingTime}
+                                onChange={(e) => {
+                                    setFormData({ ...formData, meetingTime: e.target.value })
+                                }} />
+
+                            <h2 className='meeting-text'>Project Name:</h2>
+                            <div className='editor-background'>
+                                <JoditEditor
+
+                                    ref={editor}
+                                    value={formData.projectName}
 
 
-                            ></textarea>
+                                    config={config}
+                                    tabIndex={1} // tabIndex of textarea
+                                    onChange={newContent => {
+                                        setContent(newContent);
+                                        setFormData({ ...formData, meetingOutComes: newContent });
+
+                                    }}
+                                />
+                            </div>
+
+                            <br />
+
+
+                            <h2 className='meeting-text'>Meeting Partcipants:</h2>
+                            <div className='editor-background'>
+                                <JoditEditor
+                                    ref={editor}
+                                    value={contents}
+                                    config={config}
+                                    tabIndex={1} // tabIndex of textarea
+                                    onChange={newContentt => {
+                                        setContents(newContentt);
+
+                                        setFormData({ ...formData, meetingParticipants: newContentt });
+
+
+
+                                    }}
+                                />
+                            </div>
+
 
 
 
                             <br />
 
-                            <h2 className='meeting-text'>Discussion:</h2>
-                            <textarea placeholder='Meeting Discussion' {...register("meetingDiscussion", { maxLength: 20 })} className='w-100   p-2 text-area' name="" id="" cols="20" rows="5"
-                                value={formData.meetingDiscussion}
-                                onChange={(e) => {
-                                    setFormData({ ...formData, meetingDiscussion: e.target.value })
-                                }}
+                            <h2 className='meeting-text'>Meeting Discussion:</h2>
+                            <div className='editor-background'>
+                                <JoditEditor
+                                    ref={editor}
+                                    value={contentDiscussion}
+                                    config={config}
+                                    tabIndex={1} // tabIndex of textarea
+                                    onChange={newContentss => {
+                                        setContentDiscussion(newContentss);
 
+                                        setFormData({ ...formData, meetingDiscussion: newContentss });
 
+                                    }}
 
-
-                            ></textarea>
+                                />
+                            </div>
 
 
                             <br />
                             <br />
                             <h2 className='meeting-text'>Meeting Outcomes:</h2>
-                            <JoditEditor
+                            <div className='editor-background'>
+                                <JoditEditor
+                                    ref={editor}
+                                    value={contentParticipant}
+                                    config={config}
+                                    tabIndex={1} // tabIndex of textarea
+                                    onChange={newContents => {
+                                        setContentParticipant(newContents);
 
-                                {...register("meetingOutComes")}
-                                className="text-white"
-                                ref={editor}
-                                // value={formData.meetingOutComes}
-                                config={config}
-                                tabIndex={1} // tabIndex of textarea
-                                // onBlur={newContent => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
-                                onBlur={(e) => {
-
-                                    // setFormData({ ...formData, richText: e.target.value })
-                                    console.log(e.value)
-
-                                }}
-                            />
-
+                                        setFormData({ ...formData, meetingDiscussion: newContents });
+                                    }}
+                                />
+                            </div>
                             <br />
                             {/* <input id="next" type="Submit" placeholder='' /> */}
 

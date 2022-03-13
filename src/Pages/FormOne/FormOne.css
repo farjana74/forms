@@ -6,7 +6,10 @@
     align-items: center;
     /* justify-content: space-between; */
 }
-form input{
+.bg-color{
+    /* background-color: #111215; */
+}
+.meetings-information{
     width:100%;
     color:white;
     background-color: #000000;
