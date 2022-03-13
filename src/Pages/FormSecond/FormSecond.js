@@ -45,13 +45,13 @@ const FormSecond = ({ formData, setFormData, content, setContent, contents, setC
 
                         <form onSubmit={handleSubmit(onSubmit)} className="">
 
-                            <h2 className='text-white mb-3 client-name'>Client Name :  {formData.clientName}</h2>
+                            <h2 className='text-white mb-3 client-name'>Client Name :  {formData.name}</h2>
                             <br />
                             <h2 className='text-white mb-3 client-name'> Meeting Location</h2>
-                            <input className='mb-4 ps-2 editors-background'   {...register("meetingLocation", { required: true, maxLength: 20 })} placeholder="Location"
-                                value={formData.meetingLocation}
+                            <input className='mb-4 ps-2 editors-background'   {...register("location", { required: true, maxLength: 20 })} placeholder="Location"
+                                value={formData.location}
                                 onChange={(e) => {
-                                    setFormData({ ...formData, meetingLocation: e.target.value })
+                                    setFormData({ ...formData, location: e.target.value })
                                 }} />
                             <h2 className='text-white mb-3 client-name'>Meeting Time</h2>
                             <input className='mb-4 ps-2 editors-background' {...register("meetingTime", { required: true, maxLength: 20 })} placeholder="Meeting Time"
@@ -65,14 +65,14 @@ const FormSecond = ({ formData, setFormData, content, setContent, contents, setC
                                 <JoditEditor
 
                                     ref={editor}
-                                    value={formData.projectName}
+                                    value={formData.project_name}
 
 
                                     config={config}
                                     tabIndex={1} // tabIndex of textarea
-                                    onChange={newContent => {
+                                    onBlur={newContent => {
                                         setContent(newContent);
-                                        setFormData({ ...formData, meetingOutComes: newContent });
+                                        setFormData({ ...formData, project_name: newContent });
 
                                     }}
                                 />
@@ -88,10 +88,10 @@ const FormSecond = ({ formData, setFormData, content, setContent, contents, setC
                                     value={contents}
                                     config={config}
                                     tabIndex={1} // tabIndex of textarea
-                                    onChange={newContentt => {
+                                    onBlur={newContentt => {
                                         setContents(newContentt);
 
-                                        setFormData({ ...formData, meetingParticipants: newContentt });
+                                        setFormData({ ...formData, meeting_participate: newContentt });
 
 
 
@@ -111,10 +111,10 @@ const FormSecond = ({ formData, setFormData, content, setContent, contents, setC
                                     value={contentDiscussion}
                                     config={config}
                                     tabIndex={1} // tabIndex of textarea
-                                    onChange={newContentss => {
+                                    onBlur={newContentss => {
                                         setContentDiscussion(newContentss);
 
-                                        setFormData({ ...formData, meetingDiscussion: newContentss });
+                                        setFormData({ ...formData, meeting_discussion: newContentss });
 
                                     }}
 
@@ -131,10 +131,11 @@ const FormSecond = ({ formData, setFormData, content, setContent, contents, setC
                                     value={contentParticipant}
                                     config={config}
                                     tabIndex={1} // tabIndex of textarea
-                                    onChange={newContents => {
+                                    onBlur={newContents => {
+
+                                        setFormData({ ...formData, meeting_outcomes: newContents });
                                         setContentParticipant(newContents);
 
-                                        setFormData({ ...formData, meetingDiscussion: newContents });
                                     }}
                                 />
                             </div>

@@ -3,7 +3,7 @@
 
 .meeting-header{
     color:black;
-    font-size: 15px;
+    font-size: 1rem;
      font-weight: 400px;
     font-family: 'Poppins', sans-serif;
 }
@@ -33,7 +33,10 @@
 }
 #content{
     /* padding: 2px; */
-    width:600px; 
+    width:587px;
+    height:100%;
+    padding: 4px;
+
 }
 .table-details{
     /* height: 550px; */

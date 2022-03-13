@@ -54,25 +54,25 @@ const FormOne = ({ formData, setFormData, content, setContent, contents, setCont
                     <form onSubmit={handleSubmit(onSubmit)} className="">
 
 
-                        <input className='mb-4 ps-2 meetings-information' type="text"  {...register("clientName", { required: true, maxLength: 20 })} placeholder="Client Name"
-                            value={formData.clientName}
+                        <input className='mb-4 ps-2 meetings-information' type="text"  {...register("name", { required: true, maxLength: 20 })} placeholder="Client Name"
+                            value={formData.name}
                             onChange={(e) => {
-                                setFormData({ ...formData, clientName: e.target.value })
+                                setFormData({ ...formData, name: e.target.value })
                             }} />
                         <br />
-                        <input className='mb-4 ps-2 meetings-information' placeholder="Company Name" type="text"  {...register("companyName", { required: true, maxLength: 20 })}
+                        <input className='mb-4 ps-2 meetings-information' placeholder="Company Name" type="text"  {...register("company_name", { required: true, maxLength: 20 })}
 
-                            value={formData.companyName}
+                            value={formData.company_name}
                             onChange={(e) => {
-                                setFormData({ ...formData, companyName: e.target.value })
+                                setFormData({ ...formData, company_name: e.target.value })
                             }}
 
                         />
                         <br />
-                        <input className='mb-4 ps-2 meetings-information' type="number" {...register("number", { required: true, maxLength: 20 })} placeholder="Phone Number"
-                            value={formData.number}
+                        <input className='mb-4 ps-2 meetings-information' type="number" {...register("phone", { required: true, maxLength: 20 })} placeholder="Phone Number"
+                            value={formData.phone}
                             onChange={(e) => {
-                                setFormData({ ...formData, number: e.target.value })
+                                setFormData({ ...formData, phone: e.target.value })
                             }} />
                         <br />
 

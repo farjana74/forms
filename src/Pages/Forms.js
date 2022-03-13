@@ -15,30 +15,49 @@ const Forms = () => {
     const FormTitles = ["formOne", "formTwo", "meetingMinutes", "formThree"];
     const [formData, setFormData] = useState({
 
-        clientName: "",
-        companyName: "",
-        number: "",
+        name: "",
+        company_name: "",
+        phone: "",
         email: "",
-        meetingLocation: "",
+        location: "",
 
         meetingTime: "",
-        projectName: "",
-        meetingParticipants: "",
-        meetingDiscussion: "",
+        project_name: "",
+        meeting_participate: "",
+        meeting_discussion: "",
 
-        meetingOutComes: "",
-        profile: "",
-        initialWorkProposal: "",
-        memorandum: "",
-        disclosureAgreement: "",
-        workOrder: "",
-        workQuotation: "",
-        paymentDetails: "",
+        meeting_outcomes: "",
+        digital_profile: "",
+        initial_work_proposal: "",
+        memorandum_of_understanding: "",
+        non_disclosure_agreement: "",
+        work_order: "",
+        work_quotation: "",
+        payment_detail: "",
 
 
 
 
     });
+
+
+    // post api intrigate
+
+
+
+    fetch('http://digitalbackend.techsistltd.com/meeting_minute/', {
+        method: "POST",
+        headers: {
+            'content-type': 'application/json'
+
+        },
+        body: JSON.stringify(formData)
+    })
+        .then(res => res.json())
+        .then(result => {
+
+        })
+
 
     console.log(formData);
     console.log(content)

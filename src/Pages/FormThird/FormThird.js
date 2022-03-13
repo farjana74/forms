@@ -38,10 +38,10 @@ const FormThird = ({ formData, setFormData, content, setContent, contents, setCo
 
 
 
-                                {...register("profile")}
+                                {...register("digital_profile")}
                                 // value={formData.profile}
                                 onChange={(e) => {
-                                    setFormData({ ...formData, profile: e.target.files[0] })
+                                    setFormData({ ...formData, digital_profile: e.target.files[0] })
                                 }}
                             // value={formData.profile}
                             // onChange={(e) => {
@@ -62,10 +62,10 @@ const FormThird = ({ formData, setFormData, content, setContent, contents, setCo
 
 
                             <input type="file" className='ps-5 form-control'
-                                {...register("initialWorkProposal")}
+                                {...register("initial_work_proposal")}
                                 // value={formData.profile}
                                 onChange={(e) => {
-                                    setFormData({ ...formData, initialWorkProposal: e.target.files[0] })
+                                    setFormData({ ...formData, initial_work_proposal: e.target.files[0] })
                                 }}
 
 
@@ -78,10 +78,10 @@ const FormThird = ({ formData, setFormData, content, setContent, contents, setCo
                         <label className='button-design-five p-3 w-75'>Memorandum of Understanding (MOU)
                             <input type="file" className='ps-5 form-control'
 
-                                {...register("memorandum")}
+                                {...register("memorandum_of_understanding")}
                                 // value={formData.profile}
                                 onChange={(e) => {
-                                    setFormData({ ...formData, memorandum: e.target.files[0] })
+                                    setFormData({ ...formData, memorandum_of_understanding: e.target.files[0] })
                                 }}
 
 
@@ -94,10 +94,10 @@ const FormThird = ({ formData, setFormData, content, setContent, contents, setCo
                         <label className='button-design-five p-3 w-75'>Non-Disclosure Agreement (NDA)
 
                             <input type="file" className='ps-5 form-control'
-                                {...register("disclosureAgreement")}
+                                {...register("non_disclosure_agreement")}
                                 // value={formData.profile}
                                 onChange={(e) => {
-                                    setFormData({ ...formData, disclosureAgreement: e.target.files[0] })
+                                    setFormData({ ...formData, non_disclosure_agreement: e.target.files[0] })
                                 }}
 
 
@@ -110,10 +110,10 @@ const FormThird = ({ formData, setFormData, content, setContent, contents, setCo
                         <label className='button-design-five p-3 w-75'>Work Order
 
                             <input type="file" className='ps-5 form-control'
-                                {...register("workOrder")}
+                                {...register("work_order")}
                                 // value={formData.profile}
                                 onChange={(e) => {
-                                    setFormData({ ...formData, workOrder: e.target.files[0] })
+                                    setFormData({ ...formData, work_order: e.target.files[0] })
                                 }}
 
 
@@ -127,10 +127,10 @@ const FormThird = ({ formData, setFormData, content, setContent, contents, setCo
 
                             <input type="file" className='ps-5 form-control'
 
-                                {...register("workQuotation")}
+                                {...register("work_quotation")}
                                 // value={formData.profile}
                                 onChange={(e) => {
-                                    setFormData({ ...formData, workQuotation: e.target.files[0] })
+                                    setFormData({ ...formData, work_quotation: e.target.files[0] })
                                 }}
 
                             />
@@ -154,10 +154,10 @@ const FormThird = ({ formData, setFormData, content, setContent, contents, setCo
                             <input type="file" className='ps-5 form-control'
 
 
-                                {...register("paymentDetails")}
+                                {...register("payment_detail")}
                                 // value={formData.profile}
                                 onChange={(e) => {
-                                    setFormData({ ...formData, paymentDetails: e.target.files[0] })
+                                    setFormData({ ...formData, payment_detail: e.target.files[0] })
                                 }}
                             />
                         </label>
